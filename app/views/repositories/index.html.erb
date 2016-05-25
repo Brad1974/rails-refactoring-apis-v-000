@@ -1,7 +1,7 @@
 <div class = "container">
-  <h1><%= session[:username] %>'s Repos</h1>
+  <h1><%= @username %>'s Repos</h1>
   <% @repos_array.each do |repo| %>
-    <%= repo["name"] %><br>
+    <li><a href = "<%= repo['html_url'] %>"><%= repo["name"] %></a></li>
   <% end %>
 
   <%= form_tag("/repositories/create", method: "post") do %>
